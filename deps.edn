@@ -1,6 +1,4 @@
 {:paths   ["src" "resources"]
- :deps    {org.martinklepsch/clj-http-lite {:mvn/version "0.4.3"}}
  
  :aliases {:dev
-           {:extra-paths ["dev" "classes"]
-            :extra-deps  {cheshire {:mvn/version "5.10.0"}}}}}
+           {:extra-paths ["dev" "classes"]}}}
