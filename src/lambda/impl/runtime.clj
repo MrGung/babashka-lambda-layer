@@ -1,7 +1,7 @@
 (ns lambda.impl.runtime
   (:require
     [cheshire.core :as json]
-    [clj-http.lite.client :as http]))
+    [org.httpkit.client :as http]))
 
 (defn- get-lambda-invocation-request [runtime-api]
   (http/request
