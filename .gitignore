@@ -9,3 +9,5 @@ function.zip
 babashka-runtime.zip
 examples/out
 examples/function.zip
+host*/
+all-image-files*/
