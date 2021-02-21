@@ -1,6 +1,7 @@
 @echo off
-set stack = babashka-lambda-layer
-set s3-bucket = my-bucket
+
+call 000_env.bat
+
 
 echo.
 echo.
