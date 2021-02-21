@@ -4,7 +4,7 @@ set s3-bucket = my-bucket
 
 echo.
 echo.
-docker build --target BUILDER -t babashka-lambda-archiver .
+docker build -t babashka-lambda-archiver .
 if errorlevel 1 goto error
 
 echo.

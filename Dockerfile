@@ -1,11 +1,16 @@
-FROM borkdude/babashka:0.2.7-SNAPSHOT as BABASHKA
+FROM clojure:tools-deps-alpine
 
-FROM clojure:tools-deps-alpine as BUILDER
-RUN apk add --no-cache zip
+RUN apk update && apk add --no-cache zip && apk add curl ca-certificates unzip && rm -rf /var/cache/apk/*
+
+RUN mkdir -p /var/task/bin
+
+# https://github.com/babashka/babashka/releases
+RUN curl -L 'https://github.com/babashka/babashka/releases/download/v0.2.10/babashka-0.2.10-linux-static-amd64.zip' -o /tmp/bb.zip && \
+  unzip /tmp/bb.zip && \
+  mv bb /var/task/bin/bb && \
+  chmod +x /var/task/bin/bb
+
 WORKDIR /var/task
-
-RUN mkdir bin
-COPY --from=BABASHKA /usr/local/bin/bb bin/bb
 
 ENV GITLIBS=".gitlibs/"
 COPY bootstrap bootstrap
