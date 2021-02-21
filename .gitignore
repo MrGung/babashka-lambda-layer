@@ -11,3 +11,4 @@ examples/out
 examples/function.zip
 host*/
 all-image-files*/
+/temp_template.yaml
