@@ -13,9 +13,9 @@ RUN curl -L 'https://github.com/babashka/babashka/releases/download/v0.2.10/baba
 WORKDIR /var/task
 
 ENV GITLIBS=".gitlibs/"
-COPY bootstrap bootstrap
+COPY bootstrap .
 
-COPY deps.edn deps.edn
+COPY deps.edn .
 
 RUN clojure -Sdeps '{:mvn/local-repo "./.m2/repository"}' -Spath > cp
 COPY src/ src/
