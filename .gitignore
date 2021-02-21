@@ -12,3 +12,6 @@ examples/function.zip
 host*/
 all-image-files*/
 /temp_template.yaml
+/layer_arn.out
+/publish.out
+/layer_version.out
